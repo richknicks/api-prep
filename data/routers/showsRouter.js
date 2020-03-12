@@ -35,6 +35,19 @@ router.get("/:id",  (req, res)=>{
 })
 
 // GET shows characters /:id
+router.get("/:id/characters", (req, res)=>{
+    const {id}=req.params
+    showsDB
+    .getShowsCharacters(id)
+    .then(characters=>{
+        res.status(200).json(characters)
+    })
+    .catch(error=>{
+        res.status(500).json({
+            errorMessage: `There was an error ${error}`
+        })
+    })
+})
 
 
 // POST
