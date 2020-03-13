@@ -51,7 +51,7 @@ router.delete("/:id", (req, res)=>{
     charactersDB
     .remove(id)
     .then(deleteCharacter =>{
-        res.status(200).json(deleteCharacter)
+        res.status(201).json(deleteCharacter)
     })
     .catch(error =>{
         res.status(500).json({
